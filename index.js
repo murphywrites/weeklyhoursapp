@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req,res) => {
 
-  console.log(req.body)
+  console.log(JSON.parse(req))
   
   let challenge = req.challenge
 

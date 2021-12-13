@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req,res) => {
 
-  console.log(req.body)
+  console.log(req)
   var slack_payload = JSON.parse(req.body.payload)
   let challenge = `{"challenge":"${req.body}"}`
 

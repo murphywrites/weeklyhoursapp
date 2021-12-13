@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req,res) => {
 
-  console.log(req)
+  console.log(req.body)
   
   let challenge = req.challenge
 
@@ -104,7 +104,7 @@ app.post('/', (req,res) => {
   }
 
   const challengeResponse = () => {
-    console.log("running challenge response", JSON.parse(req.payload))
+    console.log("running challenge response", req.body)
     res.writeHead(200, {'Content-Type': 'application/json'})
     res.end(`{"challenge":"${challenge}"`)
   }

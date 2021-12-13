@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 const { default: axios } = require('axios');
 const axiosConfig = {}
 
-// app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
   res.send('Hello World!')

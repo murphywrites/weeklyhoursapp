@@ -17,7 +17,7 @@ app.post('/', (req,res) => {
 
   console.log(req)
   var slack_payload = JSON.parse(req.body.payload)
-  let challenge = `{"challenge":"${req.body}"}`
+  let challenge = `{"challenge":"${req.challenge}"}`
 
   const challengeResponse = () => {
 
@@ -99,7 +99,7 @@ app.post('/', (req,res) => {
 
 
     res.writeHead(200, {'Content-Type': 'application/json'})
-    res.end(challenge)
+    res.end(`{"challenge":"qwetwlqkherkwjleqrh"`)
     
   }
 

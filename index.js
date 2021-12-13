@@ -16,11 +16,11 @@ app.get('/', (req, res) => {
 app.post('/', (req,res) => {
 
   console.log(req)
-  var slack_payload = JSON.parse(req.body.payload)
-  let challenge = `{"challenge":"${req.challenge}"}`
+  
+  let challenge = req.challenge
 
-  const challengeResponse = () => {
-
+  const slackResponse = () => {
+    var slack_payload = JSON.parse(req.body.payload)
     const values = slack_payload.state.values
 
     const submissionKey = Object.keys(values)[0]
@@ -103,8 +103,14 @@ app.post('/', (req,res) => {
     
   }
 
+  const challengeResponse = () => {
+    console.log("running challenge response", res.token)
+    res.writeHead(200, {'Content-Type': 'application/json'})
+    res.end(`{"challenge":"${challenge}"`)
+  }
 
- challengeResponse()
+
+challenge !== "" ? challengeResponse() : slackResponse()
   
 })
 

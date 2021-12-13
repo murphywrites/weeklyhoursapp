@@ -99,7 +99,7 @@ app.post('/', (req,res) => {
 
 
     res.writeHead(200, {'Content-Type': 'application/json'})
-    res.end(`{"challenge":"qwetwlqkherkwjleqrh"`)
+    res.end(``)
     
   }
 
@@ -110,7 +110,9 @@ app.post('/', (req,res) => {
   }
 
 
-challenge !== "" ? challengeResponse() : slackResponse()
+// challengeResponse() // run if you need to verify url
+
+slackResponse()
   
 })
 

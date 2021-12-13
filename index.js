@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 const { default: axios } = require('axios');
 const axiosConfig = {}
 
-app.use(express.urlencoded({extended:true}));
+// app.use(express.urlencoded({extended:true}));
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 
 app.post('/', (req,res) => {
 
-  console.log(JSON.parse(req))
+  console.log(req.body)
   
   let challenge = req.challenge
 

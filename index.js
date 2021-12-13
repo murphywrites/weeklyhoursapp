@@ -104,7 +104,7 @@ app.post('/', (req,res) => {
   }
 
   const challengeResponse = () => {
-    console.log("running challenge response", req.payload)
+    console.log("running challenge response", req.body.challenge)
     res.writeHead(200, {'Content-Type': 'application/json'})
     res.end(`{"challenge":"${challenge}"`)
   }

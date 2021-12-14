@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 const { default: axios } = require('axios');
 const axiosConfig = {}
 
-app.use(express.json()) // urlencoded({extended:true}));
+app.use(express.urlencoded({extended:true})); // use "express.json() for challenge"
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -110,9 +110,9 @@ app.post('/', (req,res) => {
   }
 
 
-challengeResponse() // run if you need to verify url
+// challengeResponse() // run if you need to verify url
 
-// slackResponse()
+slackResponse()
   
 })
 
